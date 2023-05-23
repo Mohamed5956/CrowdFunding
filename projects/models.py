@@ -11,5 +11,6 @@ class Project(models.Model):
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField()
     target = models.IntegerField()
+    is_cancelled = models.BooleanField(default=False)
     # relationships
     category = models.ForeignKey('category.Category', on_delete=models.CASCADE)

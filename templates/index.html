@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    
+    {% for project in projects %}
+        <p>{{ project.title }}</p>
+        {% for image in project.images_set.all %}
+            <img src="{{ MEDIA_URL }}projects/{{ image.image }}" alt="Project Image">
+        {% endfor %}
+    {% endfor %}
 </body>
 </html>
